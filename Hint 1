@@ -60,3 +60,71 @@ public class MyMain {
 	}
 
 }
+
+public class MyStaticQueue 
+{
+	private int queueArray[];
+	private int noOfItems = 0;
+	private int maxItems;
+
+
+
+	public MyStaticQueue(int m)
+	{
+		this.maxItems = m;
+		this.queueArray = new int[maxItems];
+		this.noOfItems = 0;
+
+
+	}
+
+	public boolean isEmpty()
+	{
+		if(noOfItems == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public int first()
+	{
+
+		return queueArray[0];
+	}
+	
+	public void add(int item)
+	{
+		
+		
+
+		if(noOfItems == maxItems - 1)
+		{
+			
+			System.out.println("The queue if full");
+		}
+		else
+		{
+			queueArray[noOfItems] = item;
+			noOfItems++;
+		}
+
+	}
+
+	public void remove()
+	{
+		for (int i = 0; i < (this.noOfItems - 1); i++)
+		{
+			this.queueArray[i] = this.queueArray[i+1];
+		}
+
+		this.noOfItems = this.noOfItems - 1;	
+	}
+
+}
+
+
+
